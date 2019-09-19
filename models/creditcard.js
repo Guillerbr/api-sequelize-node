@@ -7,6 +7,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   CreditCard.associate = function(models) {
     // associations can be defined here
+
+    CreditCard.belongsTo(models.Person, {
+      foreignKey: 'card_id',
+    });
+
+    
   };
   return CreditCard;
 };
