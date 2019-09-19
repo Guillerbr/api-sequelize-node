@@ -8,6 +8,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Branch.associate = function(models) {
     // associations can be defined here
+
+    Branch.belongsTo(models.Company, {
+      foreignKey: 'company_id'
+    });
+
   };
   return Branch;
 };
