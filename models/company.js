@@ -7,6 +7,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Company.associate = function(models) {
     // associations can be defined here
+
+    Company.hasMany(models.Branch, {
+      foreignKey: 'company_id',
+      as: 'branches'
+    });
+    
   };
   return Company;
 };
